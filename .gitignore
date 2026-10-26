@@ -1,11 +1,16 @@
-test __pycache__/
-*.py[cod]
-.venv/
-dist/
-build/
 *.egg-info/
-__pycache__/
-.pytest_cache/
+*.py[cod]
+*.pyc
 .coverage
-samples/out*
+.env
+.env.*
+.pytest_cache/
+.venv/
+__pycache__/
+build/
+dist/
+dist/*.tmp
+node_modules/
 out.txt
+samples/out*
+test __pycache__/
