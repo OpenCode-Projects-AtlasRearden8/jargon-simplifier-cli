@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jargon-simplifier"
+version = "1.0.0"
+description = "Rewrite stiff prose into plain English: pick a tone, get a side-by-side diff and a glossary of swapped terms. Runs offline or against any OpenAI-compatible endpoint."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [{ name = "Asdale Dynamics, LLC" }]
+keywords = ["plain-english", "jargon", "legal", "medical", "ollama", "cli"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Legal Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = ["openai>=1.40.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+jargon-simplifier = "jargon_simplifier.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["jargon_simplifier*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
